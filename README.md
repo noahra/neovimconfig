@@ -20,6 +20,6 @@ To get started with this Rust-focused Neovim configuration, follow these steps:
 
 1. Ensure you have Neovim installed. You can download it [here](https://neovim.io/download/).
 
-2. Clone this repository to your Neovim configuration folder (usually `~/.config/nvim/` or `~/.vim/` for Vim users).
+2. Clone this repository to your Neovim configuration folder (usually `~/.config/nvim/`)
    ```bash
    git clone https://github.com/noahra/neovimconfig.git ~/.config/nvim
