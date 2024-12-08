@@ -1,8 +1,27 @@
-return {{
+return {
   "nvim-treesitter/nvim-treesitter",
-  opts = function(_, opts)
-    if type(opts.ensure_installed) == "table" then
-      vim.list_extend(opts.ensure_installed, { "lua","ron", "rust", "toml" })
-    end
+  build = ":TSUpdate",
+  config = function()
+    local configs = require("nvim-treesitter.configs")
+    configs.setup({
+      ensure_installed = {
+        "c",
+        "lua",
+        "vim",
+        "vimdoc",
+        "query",
+        "elixir",
+        "heex",
+        "javascript",
+        "html",
+        "yaml",
+        "python",
+        "terraform",
+        "kotlin",
+      },
+      sync_install = false,
+      highlight = { enable = true },
+      indent = { enable = true },
+    })
   end,
-},}
+}
