@@ -104,13 +104,24 @@ return {
 				})
 			end,
 			["gopls"] = function()
-				-- configure emmet language server
+				-- configure go language server
 				lspconfig["gopls"].setup({
 					capabilities = capabilities,
 					filetypes = { "go", "gomod", "gowork", "gotmpl" },
+					settings = {
+						gopls = {
+							analyses = {
+								unusedparams = true,
+							},
+							staticcheck = true,
+							gofumpt = true,
+							usePlaceholders = true,
+							completeUnimported = true, -- auto-import completion items
+							importShortcut = "Both", -- Both: Keep existing behavior but add shortcuts
+						},
+					},
 				})
 			end,
-
 			["clangd"] = function()
 				-- configure clangd with specific settings
 				lspconfig["clangd"].setup({
